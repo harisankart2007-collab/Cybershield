@@ -160,7 +160,7 @@ public class AuthFrame extends JFrame {
             return;
         }
 
-        // dummy check for now, will use UserDAO.login() after the database is ready
+          // dummy check for now, will use UserDAO.login() after the database is ready
         if (email.equals("test@test.com") && password.equals("1234")) {
             User u = new User();
             u.setName("Test");
@@ -168,8 +168,8 @@ public class AuthFrame extends JFrame {
             u.setRole("USER");
             Session.setUser(u);
 
-            JOptionPane.showMessageDialog(this, "Login successful");
-            // TODO: open HomeFrame and close this window
+            new HomeFrame().setVisible(true);   // open the home screen
+            dispose();                          // close the login window
         } else {
             JOptionPane.showMessageDialog(this, "Wrong email or password.");
         }
